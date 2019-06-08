@@ -218,7 +218,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.20596142, g: 0.19215688, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -226,15 +226,15 @@ Camera:
   m_FocalLength: 9.8920355
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.25
+    x: 0
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 30
+  far clip plane: 100
   field of view: 23
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -287,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928382287}
   - component: {fileID: 928382288}
+  - component: {fileID: 928382289}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -324,6 +325,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubePre: {fileID: 1530376370059061069, guid: 05f7fc6c41785d342a9a5ad2e85dca28, type: 3}
+--- !u!114 &928382289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928382286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166cfb6dad9602840aff55dc5a8a449a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoSize: 0
 --- !u!1 &2063517879
 GameObject:
   m_ObjectHideFlags: 0

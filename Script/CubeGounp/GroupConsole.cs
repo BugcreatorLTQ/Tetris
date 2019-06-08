@@ -22,9 +22,10 @@ public class GroupConsole : MonoBehaviour
 
     void Update()
     {
+        groupMove.Judge();
         if (!GetComponent<GroupAI>().consoleAble)
         {
-            return;
+            return; 
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -34,11 +35,18 @@ public class GroupConsole : MonoBehaviour
         {
             groupMove.MoveRight();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             groupMove.MoveDown();
         }
-        groupMove.Judge();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            groupMove.RotateLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            groupMove.RotateRight();
+        }
     }
 
 }

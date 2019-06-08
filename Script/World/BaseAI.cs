@@ -3,6 +3,7 @@
 /// <summary>
 /// 基础AI
 /// </summary>
+[RequireComponent(typeof(GroupInfos))]
 public class BaseAI : MonoBehaviour
 {
     /// <summary>
@@ -25,11 +26,13 @@ public class BaseAI : MonoBehaviour
         // 设置父组件
         group.transform.SetParent(transform);
         // 暂时固定位置
-        group.transform.position = new Vector3(0, 9, 0);
+        group.transform.position = new Vector3(Random.Range(-9, 9), 20, Random.Range(-9, 9));
         // 添加组件
         group.AddComponent<Group>();
+        // 设置方块预制件
+        group.GetComponent<GroupAI>().SetCubePre(CubePre);
         // 初始化
-        group.GetComponent<GroupAI>().Init(CubePre);
+        group.GetComponent<GroupAI>().Init();
     }
 
     /// <summary>
@@ -37,9 +40,9 @@ public class BaseAI : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
-        foreach(GroupAI group in transform)
+        foreach(Cube cube in GetComponentsInChildren<Cube>())
         {
-            Destroy(group.gameObject);
+            Destroy(cube.gameObject);
         }
     }
 
